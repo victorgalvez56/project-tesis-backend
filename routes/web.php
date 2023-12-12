@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('teachers/store', [UserController::class, 'store']);
+Route::group(['middleware' => 'cors', 'prefix' => 'api'], function () {
+    Route::post('teachers/store', [UserController::class, 'store']);
+});
