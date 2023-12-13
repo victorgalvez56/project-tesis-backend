@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'cors', 'prefix' => 'api'], function () {
     Route::post('teachers/store', [UserController::class, 'store']);
+    Route::post('teachers/question', [UserController::class, 'questions']);
 });
